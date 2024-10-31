@@ -1,6 +1,8 @@
 package org.apache.clusterbr.util;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Custom StringX Class, since Java String Class is inmutable hence direct
@@ -90,5 +92,21 @@ public class StringX
     */
    public boolean isEmptyOrBlank() {
       return (internal.toString().isEmpty() || internal.toString().isBlank());
+   }
+
+
+   public List<String> toListOfStrings() {
+      String internal = this.toString();
+      char[] chars = internal.toCharArray();
+      List<String> list = new ArrayList<String>();
+      for(int i=0; i < chars.length; i++) {
+         list.add( String.valueOf(chars[i]) );         
+      }
+      return list;
+   }
+
+   public String[] toArrayOfStrings() {
+      List<String> list = this.toListOfStrings();
+      return (!list.isEmpty()) ? list.stream().toArray(String[]::new) : null;
    }
 }
