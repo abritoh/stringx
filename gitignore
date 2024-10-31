@@ -1,0 +1,13 @@
+#-- target
+/target
+
+#-- .mvn
+.mvn
+
+#-- pom
+pom.xml.*
+
+#-- other
+.project
+.classpath
+.settings

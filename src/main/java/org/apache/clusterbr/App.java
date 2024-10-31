@@ -6,6 +6,6 @@ package org.apache.clusterbr;
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("StringX started.");
+        System.out.println("::::::::::::::::::::StringX started::::::::::::::::::::");
     }
 }
