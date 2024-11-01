@@ -1,5 +1,6 @@
 # StringX
-[![Java](https://cdn.icon-icons.com/icons2/2415/PNG/64/java_original_wordmark_logo_icon_146459.png)]()
+
+![JAVA](./src/main/resources/img/java-logo.png "JAVA")
 
 _**StringX, wraps the immutable Java String class providing semantic extension-methods through Interfaces.**_
 
@@ -91,5 +92,6 @@ public interface StringXExtensionPython extends StringXNativeInterfaces {
         }
         return new StringX(result);
     }
+}
 ```
 

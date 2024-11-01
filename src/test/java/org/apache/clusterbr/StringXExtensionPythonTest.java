@@ -258,11 +258,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testSwapcaseWithSpaces";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("Java Is Fun");
+        StringX input = new StringX("sTRINGx OR StringX");
         StringX result = input.swapcase();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("jAVA iS fUN", result.toString(), "Spaces should remain unchanged");
+        assertEquals("StringX or sTRINGx", result.toString(), "Should swap only alphabetic characters-2");
         logger.info(getTestCompletedText(testName, true));
     }
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Custom StringX Class, since Java String Class is inmutable hence direct
+ * Custom StringX Class, since Java String Class is immutable hence direct
  * inheritance is not possible, to overcome that, this Class provides semantic 
  * extension-methods through Interfaces.
  *

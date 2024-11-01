@@ -8,12 +8,15 @@ import java.util.Locale;
 /**
  * StringW stands for String-Wrapper.
  * This is a wrapper for the Java-String class.
- * Since Java-String class is inmutable this class is an example on how to
+ * Since Java-String class is immutable this class is an example on how to
  * create a custom wrapper class with the same features and behavior,
  * allowing for extension and direct modification.
  * 
  * This Wrapper correspond to the Java-8 String Class:
  *      https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/String.html
+ * 
+ * @author abrito | 2024-oct
+ * 
  */
 public class StringW
         implements CharSequence, Comparable<StringW>, Serializable {
@@ -934,9 +937,9 @@ public class StringW
         return this.toString().compareTo(arg0.toString());
     }
 
-    /**
+    /*
      * 
-     * Custom Methods, add more as neccesary.
+     * Custom Methods, add more as necessary.
      * 
      */
 
