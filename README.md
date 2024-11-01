@@ -52,14 +52,23 @@ The idea presented in this article has been implemented by extending the Java St
 The approach used in the StringX class ─that can be generalized─ is depicted below:
 
 1─ To create a Wrapper-class for the type that we need attach new behavior to.
+
 2─ The inner-object can be exposed through a shortcut method, for brevity.
+
 2.1─ Or all methods of the inner-object can be exposed directly in the wrapper.
+
 2.1.1─ In this last case no new implementation is needed just invocation of each inner-method.
+
 3─ To create a common-interface for both the wrapper-class and the interfaces that will provide default-extension-methods.
+
 3.1 This common-interface should be created selecting all the interfaces in the wrapped-type that represent the most-essential and significative behavior.
+
 3.2─This common-interface must be implemented by the Wrapper.
+
 3.3─ This common-interface must be extended (inherited) by the interfaces that will implement/add new behavior for the wrapped-type ─through default-extension-methods─.
+
 4─ The common-interface is the glue/mechanism by which the default-extension-methods in the interfaces have access to the state of the internal-object defined inside the Wrapper class.
+
 
 
 ```java
