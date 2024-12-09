@@ -20,11 +20,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testCapitalizeRegularInput";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("hello");
+        StringX input = new StringX("stringX");
         StringX result = input.capitalize();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("Hello", result.toString(), "Should capitalize first letter");
+        assertEquals("StringX", result.toString(), "Should capitalize first letter");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -33,11 +33,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testCapitalizeSingleCharacter";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("h");
+        StringX input = new StringX("b");
         StringX result = input.capitalize();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("H", result.toString(), "Should capitalize single character");
+        assertEquals("B", result.toString(), "Should capitalize single character");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -59,11 +59,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testCapitalizeAlreadyCapitalized";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("Hello");
+        StringX input = new StringX("StringX");
         StringX result = input.capitalize();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("Hello", result.toString(), "Should remain unchanged");
+        assertEquals("StringX", result.toString(), "Should remain unchanged");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -72,11 +72,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testCapitalizeMultipleWords";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("hello world");
+        StringX input = new StringX("hello StringX");
         StringX result = input.capitalize();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("Hello world", result.toString(), "Should only capitalize first letter");
+        assertEquals("Hello StringX", result.toString(), "Should only capitalize first letter");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -87,11 +87,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testTitleRegularSentence";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("hello world");
+        StringX input = new StringX("hello stringX");
         StringX result = input.title();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("Hello World", result.toString(), "Each word should be capitalized");
+        assertEquals("Hello StringX", result.toString(), "Each word should be capitalized");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -100,11 +100,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testTitleSingleWord";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("java");
+        StringX input = new StringX("stringX");
         StringX result = input.title();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("Java", result.toString(), "Single word should be capitalized");
+        assertEquals("StringX", result.toString(), "Single word should be capitalized");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -126,11 +126,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testTitleAlreadyCapitalized";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("Hello World");
+        StringX input = new StringX("Hello StringX");
         StringX result = input.title();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("Hello World", result.toString(), "Should remain unchanged if already in title case");
+        assertEquals("Hello StringX", result.toString(), "Should remain unchanged if already in title case");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -139,11 +139,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testTitleMultipleSpacesBetweenWords";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("hello   world");
+        StringX input = new StringX("hello   stringX");
         StringX result = input.title();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("Hello   World", result.toString(), "Should handle multiple spaces correctly");
+        assertEquals("Hello   StringX", result.toString(), "Should handle multiple spaces correctly");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -152,11 +152,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testTitleLeadingAndTrailingSpaces";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("   hello world   ");
+        StringX input = new StringX("   clusterBR stringX   ");
         StringX result = input.title();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("   Hello World   ", result.toString(), "Should retain leading and trailing spaces");
+        assertEquals("   ClusterBR StringX   ", result.toString(), "Should retain leading and trailing spaces");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -165,11 +165,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testTitleSpecialCharacters";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("hello-world");
+        StringX input = new StringX("can-you-stringX-?");
         StringX result = input.title();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("Hello-World", result.toString(), "Should treat non-space delimiters as part of the word");
+        assertEquals("Can-You-StringX-?", result.toString(), "Should treat non-space delimiters as part of the word");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -180,11 +180,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testSwapcaseRegularInput";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("Hello World");
+        StringX input = new StringX("StringX & sTRINGx");
         StringX result = input.swapcase();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("hELLO wORLD", result.toString(), "Should swap case of each character");
+        assertEquals("sTRINGx & StringX", result.toString(), "Should swap case of each character");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -193,11 +193,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testSwapcaseSingleLowercaseCharacter";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("a");
+        StringX input = new StringX("x");
         StringX result = input.swapcase();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("A", result.toString(), "Lowercase character should become uppercase");
+        assertEquals("X", result.toString(), "Lowercase character should become uppercase");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -232,11 +232,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testSwapcaseNumbersAndSymbols";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("123!@#");
+        StringX input = new StringX("999.99!@#333.33");
         StringX result = input.swapcase();
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("123!@#", result.toString(), "Non-alphabetic characters should remain unchanged");
+        assertEquals("999.99!@#333.33", result.toString(), "Non-alphabetic characters should remain unchanged");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -273,10 +273,10 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testZfillWithWidthGreaterThanLength";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("42");
-        StringX result = input.zfill(5);
+        StringX input = new StringX("1000000001");
+        StringX result = input.zfill(20);
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("00042", result.toString(), "Should pad with zeros to the left.");
+        assertEquals("00000000001000000001", result.toString(), "Should pad with zeros to the left.");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -285,11 +285,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testZfillWithExactWidth";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("12345");
-        StringX result = input.zfill(5);
+        StringX input = new StringX("9999999999999");
+        StringX result = input.zfill(13);
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("12345", result.toString(), "Should return the same string when width matches length.");
+        assertEquals("9999999999999", result.toString(), "Should return the same string when width matches length.");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -352,11 +352,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testRemovePrefixWithMatchingPrefix";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("HelloWorld");
+        StringX input = new StringX("HelloStringX");
         StringX result = input.removeprefix("Hello");
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("World", result.toString(), "Should remove matching prefix.");
+        assertEquals("StringX", result.toString(), "Should remove matching prefix.");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -365,11 +365,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testRemovePrefixWithNoMatchingPrefix";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("HelloWorld");
-        StringX result = input.removeprefix("Hi");
+        StringX input = new StringX("Could you StringX?");
+        StringX result = input.removeprefix("Try");
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("HelloWorld", result.toString(), "Should return original string if prefix doesn't match.");
+        assertEquals("Could you StringX?", result.toString(), "Should return original string if prefix doesn't match.");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -378,11 +378,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testRemovePrefixWithEmptyPrefix";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("HelloWorld");
+        StringX input = new StringX("More stuff!");
         StringX result = input.removeprefix("");
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("HelloWorld", result.toString(), "Empty prefix should not modify the string.");
+        assertEquals("More stuff!", result.toString(), "Empty prefix should not modify the string.");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -391,8 +391,8 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testRemovePrefixWithFullStringAsPrefix";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("HelloWorld");
-        StringX result = input.removeprefix("HelloWorld");
+        StringX input = new StringX("From String to StringX");
+        StringX result = input.removeprefix("From String to StringX");
 
         super.logInfoOriginalResult(input.S(), result.S());
         assertEquals("", result.toString(), "If the whole string is the prefix, result should be empty.");
@@ -406,11 +406,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testRemoveSuffixWithMatchingSuffix";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("HelloWorld");
-        StringX result = input.removesuffix("World");
+        StringX input = new StringX("String to StringX. Then do it.");
+        StringX result = input.removesuffix(" Then do it.");
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("Hello", result.toString(), "Should remove matching suffix.");
+        assertEquals("String to StringX.", result.toString(), "Should remove matching suffix.");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -419,11 +419,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testRemoveSuffixWithNoMatchingSuffix";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("HelloWorld");
-        StringX result = input.removesuffix("Universe");
+        StringX input = new StringX("Making String a Fun Thing");
+        StringX result = input.removesuffix("What?");
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("HelloWorld", result.toString(), "Should return original string if suffix doesn't match.");
+        assertEquals("Making String a Fun Thing", result.toString(), "Should return original string if suffix doesn't match.");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -432,11 +432,11 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testRemoveSuffixWithEmptySuffix";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("HelloWorld");
-        StringX result = input.removesuffix("");
+        StringX input = new StringX("String.format is deprecated!");
+        StringX result = input.removesuffix("Isn't it?");
 
         super.logInfoOriginalResult(input.S(), result.S());
-        assertEquals("HelloWorld", result.toString(), "Empty suffix should not modify the string.");
+        assertEquals("String.format is deprecated!", result.toString(), "Empty suffix should not modify the string.");
         logger.info(getTestCompletedText(testName, true));
     }
 
@@ -445,8 +445,8 @@ public class StringXExtensionPythonTest extends BaseTest {
         final String testName = "testRemoveSuffixWithFullStringAsSuffix";
         logger.info(getTestStartedText(testName));
 
-        StringX input = new StringX("HelloWorld");
-        StringX result = input.removesuffix("HelloWorld");
+        StringX input = new StringX("No body told you, but java-interfaces are just pure-abstract classes");
+        StringX result = input.removesuffix("No body told you, but java-interfaces are just pure-abstract classes");
 
         super.logInfoOriginalResult(input.S(), result.S());
         assertEquals("", result.toString(), "If the whole string is the suffix, result should be empty.");

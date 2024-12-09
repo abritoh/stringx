@@ -19,8 +19,8 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testIncludesWithExactMatch";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("hello");
-        boolean result = original.includes("hello");
+        StringX original = new StringX("StringX");
+        boolean result = original.includes("StringX");
 
         super.logInfoOriginalResult(original.S(), Boolean.toString(result));
         assertTrue(result, "The method should return true for an exact match.");
@@ -33,8 +33,8 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testIncludesWithSubstringPresent";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("hello world");
-        boolean result = original.includes("world");
+        StringX original = new StringX("hello StringX");
+        boolean result = original.includes("StringX");
 
         super.logInfoOriginalResult(original.S(), Boolean.toString(result));
         assertTrue(result, "The method should return true when the substring is present.");
@@ -47,7 +47,7 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testIncludesWithEmptySubstring";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("test");
+        StringX original = new StringX("StringX");
         boolean result = original.includes("");
 
         super.logInfoOriginalResult(original.S(), Boolean.toString(result));
@@ -61,8 +61,8 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testIncludesWithAbsentSubstring";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("Java programming");
-        boolean result = original.includes("Python");
+        StringX original = new StringX("Java StringX");
+        boolean result = original.includes("Xtreme");
 
         super.logInfoOriginalResult(original.S(), Boolean.toString(result));
         assertFalse(result, "The method should return false when the substring is not present.");
@@ -75,7 +75,7 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testIncludesWithWhitespaceSubstring";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("hello world");
+        StringX original = new StringX("String X");
         boolean result = original.includes(" ");
 
         super.logInfoOriginalResult(original.S(), Boolean.toString(result));
@@ -89,7 +89,7 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testIncludesWithSpecialCharacters";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("test@123");
+        StringX original = new StringX("StringX@ClusterBR");
         boolean result = original.includes("@");
 
         super.logInfoOriginalResult(original.S(), Boolean.toString(result));
@@ -103,8 +103,8 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testIncludesWithCaseMismatch";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("Hello");
-        boolean result = original.includes("hello");
+        StringX original = new StringX("StringX");
+        boolean result = original.includes("stringx");
 
         super.logInfoOriginalResult(original.S(), Boolean.toString(result));
         assertFalse(result, "The method should be case-sensitive and return false for case mismatches.");
@@ -117,7 +117,7 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testIncludesWithNullSubstring";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("test");
+        StringX original = new StringX("StringX");
 
         super.logInfoOriginalResult(original.S(), "null");
         assertThrows(NullPointerException.class, () -> original.includes(null),
@@ -133,11 +133,11 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testRepeatPositiveNTimes";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("abc");
+        StringX original = new StringX("StringX+ ");
         StringX result = original.repeat(3);
 
         super.logInfoOriginalResult(original.S(), result.S());
-        assertEquals(new StringX("abcabcabc").toString(), result.toString(),
+        assertEquals(new StringX("StringX+ StringX+ StringX+ ").toString(), result.toString(),
                 "The string should be repeated 3 times.");
 
         super.logInfoOriginalResult(original.S(), result.toString());
@@ -149,7 +149,7 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testRepeatZeroTimes";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("abc");
+        StringX original = new StringX("StringX");
         StringX result = original.repeat(0);
 
         super.logInfoOriginalResult(original.S(), result.S());
@@ -164,11 +164,11 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testRepeatOneTime";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("xyz");
+        StringX original = new StringX("StringX");
         StringX result = original.repeat(1);
 
         super.logInfoOriginalResult(original.S(), result.S());
-        assertEquals(new StringX("xyz").toString(), result.toString(),
+        assertEquals(new StringX("StringX").toString(), result.toString(),
                 "Repeating once should return the original string.");
 
         logger.info(getTestCompletedText(testName, true));
@@ -179,7 +179,7 @@ public class StringXExtensionJavascriptTest extends BaseTest {
         final String testName = "testRepeatNegativeNTimes";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("test");
+        StringX original = new StringX("StringX");
         StringX result = original.repeat(-5);
 
         super.logInfoOriginalResult(original.S(), result.S());

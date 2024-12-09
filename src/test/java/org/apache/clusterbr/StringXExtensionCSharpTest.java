@@ -16,11 +16,11 @@ public class StringXExtensionCSharpTest extends BaseTest {
         final String testName = "testPadLeftWithSufficientWidth";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("Hello");
+        StringX original = new StringX("StringX");
         StringX padded = original.padLeft(10, '*');
 
         super.logInfoOriginalResult(original.S(), padded.S());
-        assertEquals("*****Hello", padded.toString(), "padLeft should add padding on the left.");
+        assertEquals("***StringX", padded.toString(), "padLeft should add padding on the left.");
 
         logger.info(getTestCompletedText(testName, true));
     }
@@ -30,11 +30,11 @@ public class StringXExtensionCSharpTest extends BaseTest {
         final String testName = "testPadLeftWithExactWidth";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("Hello");
-        StringX padded = original.padLeft(5, '*');
+        StringX original = new StringX("StringX");
+        StringX padded = original.padLeft(7, '*');
 
         super.logInfoOriginalResult(original.S(), padded.S());
-        assertEquals("Hello", padded.toString(), "padLeft should not add padding if width is exact.");
+        assertEquals("StringX", padded.toString(), "padLeft should not add padding if width is exact.");
 
         logger.info(getTestCompletedText(testName, true));
     }
@@ -44,11 +44,11 @@ public class StringXExtensionCSharpTest extends BaseTest {
         final String testName = "testPadLeftWithInsufficientWidth";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("Hello");
+        StringX original = new StringX("ABCDEF");
         StringX padded = original.padLeft(3, '*');
 
         super.logInfoOriginalResult(original.S(), padded.S());
-        assertEquals("Hello", padded.toString(),
+        assertEquals("ABCDEF", padded.toString(),
                 "padLeft should not add padding if width is less than current length.");
 
         logger.info(getTestCompletedText(testName, true));
@@ -74,11 +74,11 @@ public class StringXExtensionCSharpTest extends BaseTest {
         final String testName = "testPadRightWithSufficientWidth";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("Hello");
-        StringX padded = original.PadRight(10, '*');
+        StringX original = new StringX("STRINGX");
+        StringX padded = original.PadRight(12, '*');
 
         super.logInfoOriginalResult(original.S(), padded.S());
-        assertEquals("Hello*****", padded.toString(),
+        assertEquals("STRINGX*****", padded.toString(),
                 "PadRight should add padding on the right.");
 
         logger.info(getTestCompletedText(testName, true));
@@ -89,11 +89,11 @@ public class StringXExtensionCSharpTest extends BaseTest {
         final String testName = "testPadRightWithExactWidth";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("Hello");
+        StringX original = new StringX("StringX");
         StringX padded = original.PadRight(5, '*');
 
         super.logInfoOriginalResult(original.S(), padded.S());
-        assertEquals("Hello", padded.toString(),
+        assertEquals("StringX", padded.toString(),
                 "PadRight should not add padding if width is exact.");
 
         logger.info(getTestCompletedText(testName, true));
@@ -104,11 +104,11 @@ public class StringXExtensionCSharpTest extends BaseTest {
         final String testName = "testPadRightWithInsufficientWidth";
         logger.info(getTestStartedText(testName));
 
-        StringX original = new StringX("Hello");
+        StringX original = new StringX("StringX");
         StringX padded = original.PadRight(3, '*');
 
         super.logInfoOriginalResult(original.S(), padded.S());
-        assertEquals("Hello", padded.toString(),
+        assertEquals("StringX", padded.toString(),
                 "PadRight should not add padding if width is less than current length.");
 
         logger.info(getTestCompletedText(testName, true));

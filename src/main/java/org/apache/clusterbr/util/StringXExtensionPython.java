@@ -150,5 +150,7 @@ public interface StringXExtensionPython extends StringXNativeInterfaces {
             result.append(internal);
         }
         return new StringX(result);
-    }    
+    }
+
+
 }
